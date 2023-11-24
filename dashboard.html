@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Data Visualization Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Chart 1
+                    </div>
+                    <div class="card-body">
+                        <canvas id="chart1"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Chart 2
+                    </div>
+                    <div class="card-body">
+                        <canvas id="chart2"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // placeholder untuk chart.js
+        var data1 = {
+            labels: ["Label 1", "Label 2", "Label 3"],
+            datasets: [{
+                label: "Dataset 1",
+                data: [30, 50, 20],
+                backgroundColor: ["red", "green", "blue"],
+            }]
+        };
+
+        var data2 = {
+            labels: ["Label A", "Label B", "Label C"],
+            datasets: [{
+                label: "Dataset 2",
+                data: [40, 20, 30],
+                backgroundColor: ["orange", "purple", "yellow"],
+            }]
+        };
+
+        // Chart 1 configuration
+        var ctx1 = document.getElementById('chart1').getContext('2d');
+        var chart1 = new Chart(ctx1, {
+            type: 'bar',
+            data: data1,
+        });
+
+        // Chart 2 configuration
+        var ctx2 = document.getElementById('chart2').getContext('2d');
+        var chart2 = new Chart(ctx2, {
+            type: 'pie',
+            data: data2,
+        });
+    </script>
+
+</body>
+
+</html>
